@@ -61,6 +61,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-greycode" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/04/greycode/" class="article-date">
+  <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished">2015-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/04/greycode/">格雷码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。</p>
+<p>感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。<br>这里要复习一下数电中的异或(XOR)运算,其真值表如下：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greyXOR_TABLE.jpg?imageView2/2/w/640/h/480" alt=""><br>接着我们来说把任意一个数转换为格雷码。<br>第一步 写成二进制形式。 譬如十进制的12其二进制为1100<br>第二部 最高位保留，保留格雷码最高位为1<br>第三部 把每一位和更高位进行异或运算12的运算结果为010<br>第四部 写出格雷码十进制12的格雷码为1010<br>附上手稿：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin2gery.jpg?imageView2/2/w/640/h/480" alt=""><br>为了更方便大家理解，有一个<a href="https://github.com/ttoto/grey-code-generator" target="_blank" rel="external">小程序</a>来生成格雷码的码盘。<br>下面滔说说格雷码在绝对编码器里面的应用。在电机控制系统中。编码器可以观测电机的当前位置。单圈绝对编码器能给出但圈内电机的唯一位置。而而格雷码码盘相比于二进制码盘能消除两位间隙中的误差。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&emsp;</th>
+<th style="text-align:center">&emsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<p>上图左边是二进制码的码盘，右边是格雷码的码盘。我们可以发现格雷码确实做到了相邻两个位置。有且只有一位有变化，能确保在中间过程中不会有超过最小位的误差。</p>
+<p>关于格雷码更加详细的介绍可以参见<a href="https://en.wikipedia.org/wiki/Gray_code" target="_blank" rel="external">Wiki</a></p>
+<p>岁月如梭，光阴似箭。据我所知或者以我所见，现在有了电磁式的绝对编码器。有格雷码码盘做的光电编码器已经算是大块头的老家伙了。<br>不过。。。格雷码依旧是个很好玩的东西。<br>不是吗？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/12/04/greycode/" data-id="cihs7ajju0007a4ffc5a2ku0q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制/">控制</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-recommand-software" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/15/recommand-software/" class="article-date">
@@ -95,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/15/recommand-software/" data-id="cih0eotu800033cffmh2sx6pi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/15/recommand-software/" data-id="cihs7ajjg0003a4ff9ru7lqh7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件推荐/">软件推荐</a></li></ul>
@@ -154,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/07/Kirchhoff/" data-id="cih0eotuo00063cffrdtjon72" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/07/Kirchhoff/" data-id="cihs7ajjz0009a4ff020k1sbo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基尔霍夫/">基尔霍夫</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电子/">电子</a></li></ul>
@@ -217,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/02olpelake/" data-id="cih0eotsx00003cff97plp5md" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/02/02olpelake/" data-id="cihs7aji40000a4fffjxwxsw3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游记/">游记</a></li></ul>
@@ -319,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/29/fluidpower/" data-id="cih0eotuo00053cfflukck3nx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/29/fluidpower/" data-id="cihs7ajjw0008a4ff52pvyehy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/09/hello-world/" data-id="cih0eotu800043cffr3flcjvt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/09/hello-world/" data-id="cihs7ajjr0006a4ff506ns28t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +434,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基尔霍夫/">基尔霍夫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游记/">游记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子/">电子</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件推荐/">软件推荐</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基尔霍夫/">基尔霍夫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制/">控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游记/">游记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子/">电子</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件推荐/">软件推荐</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -386,7 +443,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/基尔霍夫/" style="font-size: 10px;">基尔霍夫</a> <a href="/tags/游记/" style="font-size: 10px;">游记</a> <a href="/tags/电子/" style="font-size: 10px;">电子</a> <a href="/tags/软件推荐/" style="font-size: 10px;">软件推荐</a>
+      <a href="/tags/基尔霍夫/" style="font-size: 10px;">基尔霍夫</a> <a href="/tags/控制/" style="font-size: 10px;">控制</a> <a href="/tags/游记/" style="font-size: 10px;">游记</a> <a href="/tags/电子/" style="font-size: 10px;">电子</a> <a href="/tags/软件推荐/" style="font-size: 10px;">软件推荐</a>
     </div>
   </div>
 
@@ -395,7 +452,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -405,6 +462,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/12/04/greycode/">格雷码</a>
+          </li>
         
           <li>
             <a href="/2015/11/15/recommand-software/">软件推荐</a>
@@ -420,10 +481,6 @@
         
           <li>
             <a href="/2015/10/29/fluidpower/">为什么飞机上大量使用液压系统</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/09/hello-world/">开篇的话</a>
           </li>
         
       </ul>

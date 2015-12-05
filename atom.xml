@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-11-15T13:55:11.769Z</updated>
+  <updated>2015-12-05T16:20:41.938Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[格雷码]]></title>
+    <link href="http://yoursite.com/2015/12/04/greycode/"/>
+    <id>http://yoursite.com/2015/12/04/greycode/</id>
+    <published>2015-12-04T21:22:16.000Z</published>
+    <updated>2015-12-05T16:20:41.938Z</updated>
+    <content type="html"><![CDATA[<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。</p>
+<p>感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。<br>这里要复习一下数电中的异或(XOR)运算,其真值表如下：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greyXOR_TABLE.jpg?imageView2/2/w/640/h/480" alt=""><br>接着我们来说把任意一个数转换为格雷码。<br>第一步 写成二进制形式。 譬如十进制的12其二进制为1100<br>第二部 最高位保留，保留格雷码最高位为1<br>第三部 把每一位和更高位进行异或运算12的运算结果为010<br>第四部 写出格雷码十进制12的格雷码为1010<br>附上手稿：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin2gery.jpg?imageView2/2/w/640/h/480" alt=""><br>为了更方便大家理解，有一个<a href="https://github.com/ttoto/grey-code-generator" target="_blank" rel="external">小程序</a>来生成格雷码的码盘。<br>下面滔说说格雷码在绝对编码器里面的应用。在电机控制系统中。编码器可以观测电机的当前位置。单圈绝对编码器能给出但圈内电机的唯一位置。而而格雷码码盘相比于二进制码盘能消除两位间隙中的误差。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&emsp;</th>
+<th style="text-align:center">&emsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<p>上图左边是二进制码的码盘，右边是格雷码的码盘。我们可以发现格雷码确实做到了相邻两个位置。有且只有一位有变化，能确保在中间过程中不会有超过最小位的误差。</p>
+<p>关于格雷码更加详细的介绍可以参见<a href="https://en.wikipedia.org/wiki/Gray_code" target="_blank" rel="external">Wiki</a></p>
+<p>岁月如梭，光阴似箭。据我所知或者以我所见，现在有了电磁式的绝对编码器。有格雷码码盘做的光电编码器已经算是大块头的老家伙了。<br>不过。。。格雷码依旧是个很好玩的东西。<br>不是吗？</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。]]>
+    </summary>
+    
+      <category term="控制" scheme="http://yoursite.com/tags/%E6%8E%A7%E5%88%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[软件推荐]]></title>
