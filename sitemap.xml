@@ -2,18 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2015/12/04/greycode/</loc>
-    <lastmod>2015-12-05T16:20:41.938Z</lastmod>
+    <loc>http://yoursite.com/about/index.html</loc>
+    <lastmod>2015-12-22T18:04:52.961Z</lastmod>
   </url>
   
   <url>
     <loc>http://yoursite.com/2015/11/15/recommand-software/</loc>
-    <lastmod>2015-11-15T13:55:11.769Z</lastmod>
+    <lastmod>2015-12-22T16:44:39.536Z</lastmod>
   </url>
   
   <url>
     <loc>http://yoursite.com/2015/11/07/Kirchhoff/</loc>
-    <lastmod>2015-11-08T22:00:21.140Z</lastmod>
+    <lastmod>2015-12-22T16:42:12.437Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2015/12/04/greycode/</loc>
+    <lastmod>2015-12-22T16:33:54.744Z</lastmod>
   </url>
   
   <url>

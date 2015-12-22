@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Ttoto的后花园</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+    <title>Ttoto的后花园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SY.Chen">
+    
+
+    
+    <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ttoto的后花园">
 <meta property="og:url" content="http://yoursite.com/index.html">
@@ -14,75 +20,75 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ttoto的后花园">
 <meta name="twitter:description">
-  
+
+    
     <link rel="alternative" href="/atom.xml" title="Ttoto的后花园" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-  
-
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Ttoto的后花园</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-greycode" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/12/04/greycode/" class="article-date">
-  <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished">2015-12-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/04/greycode/">格雷码</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+  <body>
+    <header>
       
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Ttoto的后花园">Ttoto的后花园</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/04/greycode/" title="格雷码" itemprop="url">格雷码</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished"> 發表於 2015-12-04</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。</p>
 <p>感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。<br>这里要复习一下数电中的异或(XOR)运算,其真值表如下：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greyXOR_TABLE.jpg?imageView2/2/w/640/h/480" alt=""><br>接着我们来说把任意一个数转换为格雷码。<br>第一步 写成二进制形式。 譬如十进制的12其二进制为1100<br>第二部 最高位保留，保留格雷码最高位为1<br>第三部 把每一位和更高位进行异或运算12的运算结果为010<br>第四部 写出格雷码十进制12的格雷码为1010<br>附上手稿：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin2gery.jpg?imageView2/2/w/640/h/480" alt=""><br>为了更方便大家理解，有一个<a href="https://github.com/ttoto/grey-code-generator" target="_blank" rel="external">小程序</a>来生成格雷码的码盘。<br>下面滔说说格雷码在绝对编码器里面的应用。在电机控制系统中。编码器可以观测电机的当前位置。单圈绝对编码器能给出但圈内电机的唯一位置。而而格雷码码盘相比于二进制码盘能消除两位间隙中的误差。</p>
 <table>
@@ -94,8 +100,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
-<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/640/h/480/format/jpg" alt=""></td>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/480/h/360/format/jpg" alt=""></td>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/480/h/360/format/jpg" alt=""></td>
 </tr>
 </tbody>
 </table>
@@ -103,89 +109,121 @@
 <p>关于格雷码更加详细的介绍可以参见<a href="https://en.wikipedia.org/wiki/Gray_code" target="_blank" rel="external">Wiki</a></p>
 <p>岁月如梭，光阴似箭。据我所知或者以我所见，现在有了电磁式的绝对编码器。有格雷码码盘做的光电编码器已经算是大块头的老家伙了。<br>不过。。。格雷码依旧是个很好玩的东西。<br>不是吗？</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/04/greycode/" data-id="cihs7ajju0007a4ffc5a2ku0q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/控制/">控制</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-recommand-software" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/15/recommand-software/" class="article-date">
-  <time datetime="2015-11-15T10:49:31.000Z" itemprop="datePublished">2015-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/15/recommand-software/">软件推荐</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/控制/">控制</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/15/recommand-software/" title="软件推荐" itemprop="url">软件推荐</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-15T10:49:31.000Z" itemprop="datePublished"> 發表於 2015-11-15</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p>&emsp;&emsp;好软件能顶半边天，我想在这里推荐几款自己常用的免费软件。如果有新的好玩的软件我也会更新上来。点击软件名会跳转到相应的地址。</p>
 <h3 id="多个任务区，工作生活两不误-Dexpot">多个任务区，工作生活两不误-<a href="http://dexpot.de/" target="_blank" rel="external">Dexpot</a></h3><p>&emsp;&emsp;电脑性能越来越好，桌面越来越挤。同时运行了太多的程序后桌面太乱。</p>
-<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp1.png?imageView2/2/w/640/h/480/format/jpg" alt=""><br>&emsp;&emsp;如果有用过Linux系统的同学是否记得很多linux的发行版支持在多个桌面之间切换。Windows下陆续尝试过几个软件。这款来自德国的免费软件Dexpot是我觉得最好用的。在设置里你可以设置快捷键基本上能获得和Ubuntu下完全一样的体验。</p>
-<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp4.png?imageView2/2/w/640/h/480" alt=""></p>
+<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp1.png?imageView2/2/w/640/h/480/format/jpg" class="img-center"><br>&emsp;&emsp;如果有用过Linux系统的同学是否记得很多linux的发行版支持在多个桌面之间切换。Windows下陆续尝试过几个软件。这款来自德国的免费软件Dexpot是我觉得最好用的。在设置里你可以设置快捷键基本上能获得和Ubuntu下完全一样的体验。</p>
+<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp4.png?imageView2/2/w/640/h/480" class="img-center"></p>
 <h3 id="和浏览器一样的文件管理器-Clover">和浏览器一样的文件管理器-<a href="http://cn.ejie.me/" target="_blank" rel="external">Clover</a></h3><p>&emsp;&emsp;Clover这款软件必须算是业界良心了。让你的文件浏览器和chrom一样支持标签。有很完整的中文说明和支持。</p>
 <h3 id="比快更快的PDF阅读器-Sumatrapdf">比快更快的PDF阅读器-<a href="http://www.sumatrapdfreader.org/free-pdf-reader.html" target="_blank" rel="external">Sumatrapdf</a></h3><p>&emsp;&emsp;时至今日，PDF阅读软件的选择太多。但跟多时候我们需要的只是一款简单粗暴的产品。没有广告推荐，界面上没有太多的按钮-保证屏幕上能现实最多的内容，几乎秒开。Sumatrapdf就是最实用的PDF阅读器。当然如果需要注释等功能Foxit还是最好的选择。</p>
-<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp3.png?imageView2/2/w/640/h/480" alt=""></p>
+<p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/rstmp3.png?imageView2/2/w/640/h/480" class="img-center"></p>
 <p>END</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/15/recommand-software/" data-id="cihs7ajjg0003a4ff9ru7lqh7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件推荐/">软件推荐</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kirchhoff" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/07/Kirchhoff/" class="article-date">
-  <time datetime="2015-11-07T22:05:02.000Z" itemprop="datePublished">2015-11-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/07/Kirchhoff/">怎样使用基尔霍夫定律解决问题</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/软件推荐/">软件推荐</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/07/Kirchhoff/" title="怎样使用基尔霍夫定律解决问题" itemprop="url">怎样使用基尔霍夫定律解决问题</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-07T22:05:02.000Z" itemprop="datePublished"> 發表於 2015-11-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
@@ -202,49 +240,65 @@
 </script>
 
 <p>&emsp;&emsp;</p>
-<h3 id="工欲善其事，必先利其器">工欲善其事，必先利其器</h3><p>&emsp;&emsp;从基尔霍夫定理开始说起。上过电路基础课程的同学肯定对<a href="https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws" target="_blank" rel="external">基尔霍夫电流电压定律</a>很了解，我们亦可以可用文字描述成：<br>对于任意节点流入流出电流和为0,<br>$$\sum_{k=0}^{n}I_{k}=0$$<br>对于任意闭合回路电压代数和为0。<br>$$\sum_{k=0}^{n}U_{k}=0$$<br>我们常用下列的题目来考察自己是否能学以致用：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp1.png?imageView2/2/w/320/h/240" alt=""><br>能很快解出上面的题目的同学不一定对下面的题目很有信心：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp2.png?imageView2/2/w/320/h/240" alt=""><br>这是因为实际在比较复杂的情况下。要解出上面的</p>
-<h3 id="如何准确找出所需的线性无关的方程组">如何准确找出所需的线性无关的方程组</h3><p>&emsp;&emsp;为了更好的说明题目，我们明确两个细节<br>&emsp;&emsp;&emsp;&emsp;1,n=节点个数；<br>&emsp;&emsp;&emsp;&emsp;2,b=电流个数。<br>&emsp;&emsp;在上例中我们可以看出有A~E五个节点,n=5;同时有8个未知电流,b=8。<br>&emsp;&emsp;此外我们引出两个概念”Tree Branch”和”Non-Tree Branch”(主分支与从分支)。其中”Tree Branch”是指连接所有不同节点最少支流。此外的电流算是”Non-Tree Branch”在下图中蓝色标出的是主分支。<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp4.png?imageView2/2/w/640/h/480" alt=""><br>&emsp;&emsp;在选择线性无关的方程组时我们选取(n-1)个节点利用基尔霍夫电流定律建立方程。在选择建立电压定律的方程时我们遵循”Non-Tree Branch”+”Tree Branch”的原则来建立。如上图中的四个闭合回路都包含了Tree。这样我们就能够构建b个线性无关的方程组：<br>$$<br> \begin{equation}<br>\left\{<br>\begin{aligned}<br>I_{1} - I_{2} -I_{4}                                                       &amp;=0\\<br>I_{2} - I_{3} -I_{5}                                                       &amp;=0\\<br>I_{1} - I_{4} -I_{6} -I_{8}                                                &amp;=0\\<br>I_{5} + I_{6} -I_{7}                                                       &amp;=0\\<br>R_1 \cdot I_1 + R_4 \cdot I_4                                              &amp;=U_{1}\\<br>R_2 \cdot I_2 - R_4 \cdot I_4 + R_5 \cdot I_5 - R_6\cdot I_6               &amp;= U_2\\<br>R_2 \cdot I_2 + R_3 \cdot I_3 - R_4 \cdot I_4 - R_6\cdot I_6 - R_7\cdot I_7&amp;=-U_3\\<br>R_6 \cdot I_6 - R_7 \cdot I_7 - R_8 \cdot I_8                              &amp;=0\\<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>&emsp;&emsp;在上面的方程组中 1~4 是利用A\B\C\D四个节点建立的基尔霍夫电流方程， 5~8是按照上述规则建立的基尔霍夫电压方程。通过这样子的建立方式我们能够保证这8个方程是线性无关的。</p>
+<h3 id="工欲善其事，必先利其器">工欲善其事，必先利其器</h3><p>&emsp;&emsp;从基尔霍夫定理开始说起。上过电路基础课程的同学肯定对<a href="https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws" target="_blank" rel="external">基尔霍夫电流电压定律</a>很了解，我们亦可以可用文字描述成：<br>对于任意节点流入流出电流和为0,<br>$$\sum_{k=0}^{n}I_{k}=0$$<br>对于任意闭合回路电压代数和为0。<br>$$\sum_{k=0}^{n}U_{k}=0$$<br>我们常用下列的题目来考察自己是否能学以致用：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp1.png?imageView2/2/w/320/h/240" class="img-center"><br>能很快解出上面的题目的同学不一定对下面的题目很有信心：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp2.png?imageView2/2/w/320/h/240" class="img-center"><br>这是因为实际在比较复杂的情况下。要解出上面的</p>
+<h3 id="如何准确找出所需的线性无关的方程组">如何准确找出所需的线性无关的方程组</h3><p>&emsp;&emsp;为了更好的说明题目，我们明确两个细节<br>&emsp;&emsp;&emsp;&emsp;1,n=节点个数；<br>&emsp;&emsp;&emsp;&emsp;2,b=电流个数。<br>&emsp;&emsp;在上例中我们可以看出有A~E五个节点,n=5;同时有8个未知电流,b=8。<br>&emsp;&emsp;此外我们引出两个概念”Tree Branch”和”Non-Tree Branch”(主分支与从分支)。其中”Tree Branch”是指连接所有不同节点最少支流。此外的电流算是”Non-Tree Branch”在下图中蓝色标出的是主分支。<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp4.png?imageView2/2/w/640/h/480" class="img-center"><br>&emsp;&emsp;在选择线性无关的方程组时我们选取(n-1)个节点利用基尔霍夫电流定律建立方程。在选择建立电压定律的方程时我们遵循”Non-Tree Branch”+”Tree Branch”的原则来建立。如上图中的四个闭合回路都包含了Tree。这样我们就能够构建b个线性无关的方程组：<br>$$<br> \begin{equation}<br>\left\{<br>\begin{aligned}<br>I_{1} - I_{2} -I_{4}                                                       &amp;=0\\<br>I_{2} - I_{3} -I_{5}                                                       &amp;=0\\<br>I_{1} - I_{4} -I_{6} -I_{8}                                                &amp;=0\\<br>I_{5} + I_{6} -I_{7}                                                       &amp;=0\\<br>R_1 \cdot I_1 + R_4 \cdot I_4                                              &amp;=U_{1}\\<br>R_2 \cdot I_2 - R_4 \cdot I_4 + R_5 \cdot I_5 - R_6\cdot I_6               &amp;= U_2\\<br>R_2 \cdot I_2 + R_3 \cdot I_3 - R_4 \cdot I_4 - R_6\cdot I_6 - R_7\cdot I_7&amp;=-U_3\\<br>R_6 \cdot I_6 - R_7 \cdot I_7 - R_8 \cdot I_8                              &amp;=0\\<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>&emsp;&emsp;在上面的方程组中 1~4 是利用A\B\C\D四个节点建立的基尔霍夫电流方程， 5~8是按照上述规则建立的基尔霍夫电压方程。通过这样子的建立方式我们能够保证这8个方程是线性无关的。</p>
 <h3 id="构建矩阵并求解">构建矩阵并求解</h3><p>$$<br>\begin{pmatrix}<br>1&amp;-1&amp;0&amp;-1&amp;0&amp;0&amp;0&amp;0\\0&amp;1&amp;-1&amp;0&amp;1&amp;0&amp;0&amp;0\\1&amp;0&amp;0&amp;-1&amp;0&amp;-1&amp;0&amp;-1\\0&amp;0&amp;0&amp;0&amp;1&amp;1&amp;-1&amp;0\\R_1&amp;0&amp;0&amp;R_4&amp;0&amp;0&amp;0&amp;0\\0&amp;R_2&amp;R_3&amp;-R_4&amp;R5&amp;-R_6&amp;0&amp;0\\0&amp;R_2&amp;R_3&amp;-R_4&amp;0&amp;-R_6&amp;-R_7&amp;0\\0&amp;0&amp;0&amp;0&amp;0&amp;R_6&amp;R_7&amp;-R_8\end{pmatrix} \cdot \begin{pmatrix}I_1\\I_2\\I_3\\I_4\\I_5\\I_6\\I_7\\I_8\end{pmatrix}=\begin{pmatrix}0\\0\\0\\0\\U_1\\U_{2}\\{-U_3}\\0\end{pmatrix}$$<br>这样在仿真过程中通过对矩阵求逆，就很容易得到各个branch上的电流大小。进而得出结果</p>
 <h3 id="说在后面的话">说在后面的话</h3><p>&emsp;&emsp;纸上得来终觉浅，绝知此事要躬行。重新学习了一遍基尔霍夫定律，又有了新的发现。难道这就是螺旋往复的过程？不管你信不信，我是信了。</p>
 <p>END</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/07/Kirchhoff/" data-id="cihs7ajjz0009a4ff020k1sbo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基尔霍夫/">基尔霍夫</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电子/">电子</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-02olpelake" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/02/02olpelake/" class="article-date">
-  <time datetime="2015-11-02T10:17:17.000Z" itemprop="datePublished">2015-11-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/02/02olpelake/">Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/基尔霍夫/">基尔霍夫</a><a href="/tags/电子/">电子</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/02/02olpelake/" title="Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。" itemprop="url">Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-11-02T10:17:17.000Z" itemprop="datePublished"> 發表於 2015-11-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p>&emsp;&emsp;来到德国一个月有余。大部分时间都呆在锡根。感谢最近几天的好天气。上个周末有幸和同学一起去了位于Olpe的<a href="https://en.wikipedia.org/wiki/Biggesee" target="_blank" rel="external">Biggesee</a>。没想到距离锡根只有半个小时车程的小镇上有这番美景。</p>
 <p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/IMG_20151031_130032.jpg?imageView2/2/w/1024/h/768/format/jpg" alt=""></p>
 <p>此间的美景大概只有九寨沟才有罢。回来后迫不及待和好友分享今天的行程。有朋友相机的参数。可是事实上好景与相机无关。若非要问只能给华为4C打个广告了^_^</p>
@@ -271,43 +325,59 @@
 <p><img src="http://7xnxd9.com1.z0.glb.clouddn.com/IMG_20151031_151646.jpg?imageView2/2/w/1024/h/768/format/jpg" alt=""></p>
 <p>END</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/02/02olpelake/" data-id="cihs7aji40000a4fffjxwxsw3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游记/">游记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-fluidpower" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/29/fluidpower/" class="article-date">
-  <time datetime="2015-10-29T21:41:51.000Z" itemprop="datePublished">2015-10-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/29/fluidpower/">为什么飞机上大量使用液压系统</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/游记/">游记</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/29/fluidpower/" title="为什么飞机上大量使用液压系统" itemprop="url">为什么飞机上大量使用液压系统</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-29T21:41:51.000Z" itemprop="datePublished"> 發表於 2015-10-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>LZ在国内上学的时候学的是航空工程，其中一个课程是介绍航空液压系统的。教授说液压系统在飞机中是非常重要的。但是学的是囫囵吞枣，并没有留下很深的映像。毕业后，身边从事机务工作的同学和我交谈中提到飞机的液压系统很复杂。但是在浮躁的lz看来液压系统是六七十年代的技术迟早要被电机所替代。后来LZ到了欧洲上学，又上了液压的课程。醍醐灌顶。明白了为什么飞机上大量使用液压系统。</p>
 <p>下表是各种传动系统的粗略对比：</p>
 <table>
@@ -373,152 +443,315 @@
 <p>或许有一天常温超导技术走进现实，大程度的减少电机的热功率。这样电机的力密度就能上升几个量级。那时候还真可能电机一统天下呢。</p>
 <p>拭目以待吧！</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/29/fluidpower/" data-id="cihs7ajjw0008a4ff52pvyehy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/09/hello-world/" class="article-date">
-  <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished">2015-10-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/09/hello-world/">开篇的话</a>
-    </h1>
-  
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-      </header>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-    <div class="article-entry" itemprop="articleBody">
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
         <p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
 
-      
+        
+        
+        <p class="article-more-link">
+          
+       </p>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/09/hello-world/" data-id="cihs7ajjr0006a4ff506ns28t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
 
-  
-  
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/基尔霍夫/">基尔霍夫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/控制/">控制</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游记/">游记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子/">电子</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件推荐/">软件推荐</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+</div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/基尔霍夫/" style="font-size: 10px;">基尔霍夫</a> <a href="/tags/控制/" style="font-size: 10px;">控制</a> <a href="/tags/游记/" style="font-size: 10px;">游记</a> <a href="/tags/电子/" style="font-size: 10px;">电子</a> <a href="/tags/软件推荐/" style="font-size: 10px;">软件推荐</a>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2015/12/04/greycode/">格雷码</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/15/recommand-software/">软件推荐</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/07/Kirchhoff/">怎样使用基尔霍夫定律解决问题</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/02/02olpelake/">Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/29/fluidpower/">为什么飞机上大量使用液压系统</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2015 SY.Chen<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+<div class="comments-count">
+	
+</div>
+
 </footer>
+
+
+    </article>
+
+
+
+
+
+
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/游记/" title="游记">游记<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/软件推荐/" title="软件推荐">软件推荐<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/电子/" title="电子">电子<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/基尔霍夫/" title="基尔霍夫">基尔霍夫<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/控制/" title="控制">控制<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://www.npurobot.com" target="_blank" title="陪伴我度过美好本科时光">舞蹈机器人基地</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://www.uni-siegen.de" target="_blank" title="现在在这里上学">锡根大学</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
     </div>
-    <nav id="mobile-nav">
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Shengyang Chen in Siegen. <br/>
+			This is my photo , believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/ttoto" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:chensy1991@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="SY.Chen">SY.Chen</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
 
-  </div>
-</body>
-</html>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e74d6370241d514294c111105608e140";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>
