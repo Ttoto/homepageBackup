@@ -43,7 +43,7 @@
 				<h1 class="site-name"><a href="/" title="Ttoto的后花园">Ttoto的后花园</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -76,6 +76,64 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/05/03/qtpclv/" title="QT工程添加PCL库" itemprop="url">QT工程添加PCL库</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-03T10:04:39.000Z" itemprop="datePublished"> 发表于 2016-05-03</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>&emsp;&emsp;在最近的项目中，需要可视化点云。PCL自然是第一选择。在qt中使用PCL可以参照pcl tutorial建立CMake工程。还有另外一种选择是在qt工程中添加pcl库，依然保留qmake-&gt;make编译过程。因为之前的项目是使用qt工程建立的。我希望保留使用第二种方法。但期间困惑了几个小时才解决。<br>&emsp;&emsp;故，记录一下过程：<br>&emsp;&emsp;我的环境是 Ubuntu14.04 安装PCL：</p>
+<p><pre><code>sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl<br>sudo apt-get update<br>sudo apt-get install libpcl-all<br></code></pre>&emsp;&emsp;在Ubuntu下面安装的时候依赖库也都直接安装好了。在Windows下面开发的时候可以去下载all-in-one的安装包<br>&emsp;&emsp;但是因为pcl是依赖于boost eigen flann VTK QT QHull OpenNi 所以需要依次添加。下面给出*.pro的相关内容：</p>
+<p><pre><code>INCLUDEPATH +=  “/usr/include/pcl-1.7/“    \<br>                “/usr/include/pcl-1.7/pcl” \<br>                “/usr/include/flann/“      \<br>                “/usr/include/eigen3/“     \<br>                “/usr/include/vtk-5.8”     \<br>                “/usr/include/boost”       \<br></code></pre></p>
+<p><pre><code>LIBS += -lpcl_common            \<br>        -lpcl_features          \<br>        -lpcl_filters           \<br>        -lpcl_io                \<br>        -lpcl_io_ply            \<br>        -lpcl_kdtree            \<br>        -lpcl_keypoints         \<br>        -lpcl_octree            \<br>        -lpcl_outofcore         \<br>        -lpcl_features          \<br>        -lpcl_segmentation      \<br>        -lpcl_people            \<br>        -lpcl_recognition       \<br>        -lpcl_registration      \<br>        -lpcl_sample_consensus  \<br>        -lpcl_search            \<br>        -lpcl_surface           \<br>        -lpcl_tracking          \<br>        -lpcl_visualization     \<br>        -lflann                 \<br>        -lqhull                 \<br>        -lboost_system          \<br>        -lQVTK                  \<br>        -lvtkCommon             \<br>        -lvtkFiltering          \<br>        -lvtkRendering          \<br></code></pre>&emsp;&emsp;综上，主要有两点要注意。其一，*.pro文件需要添加所有的依赖库，否则链接的时候会报错。其二，PCL QVTK5.8只对QT4支持，所以需要用QT4的库(查看方法 qmake -v)。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/PCL/">PCL</a><a href="/tags/QT/">QT</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/03/22/study/" title="学习方向" itemprop="url">学习方向</a>
   </h1>
   <p class="article-author">By
@@ -83,15 +141,15 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2016-03-21T23:09:26.000Z" itemprop="datePublished"> 發表於 2016-03-22</time>
+    <time datetime="2016-03-21T23:09:26.000Z" itemprop="datePublished"> 发表于 2016-03-22</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>开始硕士学习半年有余，开心与浑噩并存。<br>一周前去玩，我在图宾根玩的时候，有当地的工程师人关心我毕业以后希望从事的行业。我想了好久，最后也没有很好的回答上，进入了下一个话题。<br>小时候总是想着一定要成为一个很厉害的人。各个方面都能做的最好。越长大，越意识到现代社会的职业分工是很细化的，在各个领域都有很深入的认识是不现实的事情。选一个适合自己的方向并且长期的努力下去才是最重要的事情。<br>回想起本科和两年的工作经历，本科专业虽不是喜欢。但是应付考试的过程确乎大大的拓展了我的知识面。在实践中心的日子，实践能得到了很好的培养。之后很幸运的两段的工作经历都是在深圳成长最快的公司，同时身边不少朋友选择了创业。<br>于是来德国学习的前半年自己的心理状态很不稳定，航空，机电，创业，三者交织，影响。<br>但是路要一步步走，生活要一天天过。正好下学期能去实验室做课题。希望能在前期吧自己的心理调整到平静的状态。</p>
-<p>长期来说机器人是自己很感兴趣同时也有一定知识储备的方向。<br>短期还是把主要的任务放在三维重建的课题上吧。</p>
-<p>方向有了，心态就好了。<br>恩，就这样，触发吧！少年！</p>
+        <p>&emsp;&emsp;开始硕士学习半年有余，开心与浑噩并存。<br>&emsp;&emsp;一周前去玩，我在图宾根玩的时候，有当地的工程师人关心我毕业以后希望从事的行业。我想了好久，最后也没有很好的回答上，进入了下一个话题。<br>&emsp;&emsp;小时候总是想着一定要成为一个很厉害的人。各个方面都能做的最好。越长大，越意识到现代社会的职业分工是很细化的，在各个领域都有很深入的认识是不现实的事情。选一个适合自己的方向并且长期的努力下去才是最重要的事情。<br>&emsp;&emsp;回想起本科和两年的工作经历，本科专业虽不是喜欢。但是应付考试的过程确乎大大的拓展了我的知识面。在实践中心的日子，实践能得到了很好的培养。之后很幸运的两段的工作经历都是在深圳成长最快的公司，同时身边不少朋友选择了创业。<br>&emsp;&emsp;于是来德国学习的前半年自己的心理状态很不稳定，航空，机电，创业，三者交织，影响。但是路要一步步走，生活要一天天过。正好下学期能去实验室做课题。希望能在前期吧自己的心理调整到平静的状态。</p>
+<p>&emsp;&emsp;长期来说机器人是自己很感兴趣同时也有一定知识储备的方向。短期还是把主要的任务放在三维重建的课题上吧。</p>
+<p>&emsp;&emsp;方向有了，心态就好了。<br>&emsp;&emsp;恩，就这样，触发吧！少年！</p>
 
         
         
@@ -135,7 +193,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished"> 發表於 2015-12-04</time>
+    <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished"> 发表于 2015-12-04</time>
     
   </p>
 </header>
@@ -208,7 +266,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-15T10:49:31.000Z" itemprop="datePublished"> 發表於 2015-11-15</time>
+    <time datetime="2015-11-15T10:49:31.000Z" itemprop="datePublished"> 发表于 2015-11-15</time>
     
   </p>
 </header>
@@ -270,7 +328,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-07T22:05:02.000Z" itemprop="datePublished"> 發表於 2015-11-07</time>
+    <time datetime="2015-11-07T22:05:02.000Z" itemprop="datePublished"> 发表于 2015-11-07</time>
     
   </p>
 </header>
@@ -345,7 +403,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-11-02T10:17:17.000Z" itemprop="datePublished"> 發表於 2015-11-02</time>
+    <time datetime="2015-11-02T10:17:17.000Z" itemprop="datePublished"> 发表于 2015-11-02</time>
     
   </p>
 </header>
@@ -424,7 +482,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-29T21:41:51.000Z" itemprop="datePublished"> 發表於 2015-10-29</time>
+    <time datetime="2015-10-29T21:41:51.000Z" itemprop="datePublished"> 发表于 2015-10-29</time>
     
   </p>
 </header>
@@ -537,7 +595,7 @@
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 发表于 2015-10-09</time>
     
   </p>
 </header>
@@ -576,17 +634,17 @@
 
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -609,12 +667,22 @@
 				<li><a href="/tags/基尔霍夫/" title="基尔霍夫">基尔霍夫<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/QT/" title="QT">QT<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/PCL/" title="PCL">PCL<sup>1</sup></a></li>
+			
+		
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -636,7 +704,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
@@ -651,8 +719,8 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Shengyang Chen in Siegen. <br/>
-			This is my photo , believe it or not.</p>
+		<p>  <br/>
+			Hello ,I&#39;m Shengyang Chen in Siegen.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -789,7 +857,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
