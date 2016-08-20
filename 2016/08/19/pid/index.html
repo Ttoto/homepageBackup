@@ -4,23 +4,40 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>QT工程添加PCL库 | Ttoto的后花园</title>
+    <title>从Z域看PID控制器 | Ttoto的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="&amp;emsp;&amp;emsp;在最近的项目中，需要可视化点云。PCL自然是第一选择。在qt中使用PCL可以参照pcl tutorial建立CMake工程。还有另外一种选择是在qt工程中添加pcl库，依然保留qmake-&amp;gt;make编译过程。因为之前的项目是使用qt工程建立的。我希望保留使用第二种方法。但期间困惑了几个小时才解决。&amp;emsp;&amp;emsp;故，记录一下过程：&amp;emsp;&amp;emsp;我的环">
+    <meta name="description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="QT工程添加PCL库">
-<meta property="og:url" content="http://yoursite.com/2016/05/03/qtpclv/index.html">
+<meta property="og:title" content="从Z域看PID控制器">
+<meta property="og:url" content="http://yoursite.com/2016/08/19/pid/index.html">
 <meta property="og:site_name" content="Ttoto的后花园">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;在最近的项目中，需要可视化点云。PCL自然是第一选择。在qt中使用PCL可以参照pcl tutorial建立CMake工程。还有另外一种选择是在qt工程中添加pcl库，依然保留qmake-&amp;gt;make编译过程。因为之前的项目是使用qt工程建立的。我希望保留使用第二种方法。但期间困惑了几个小时才解决。&amp;emsp;&amp;emsp;故，记录一下过程：&amp;emsp;&amp;emsp;我的环">
-<meta property="og:updated_time" content="2016-05-03T10:57:45.058Z">
+<meta property="og:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
+<meta property="og:image" content="http://i2.buimg.com/4851/ea0ec90f6b1a3465.jpg">
+<meta property="og:image" content="http://i2.buimg.com/4851/b66c2d126b3d5b48.jpg">
+<meta property="og:updated_time" content="2016-08-20T20:38:43.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QT工程添加PCL库">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;在最近的项目中，需要可视化点云。PCL自然是第一选择。在qt中使用PCL可以参照pcl tutorial建立CMake工程。还有另外一种选择是在qt工程中添加pcl库，依然保留qmake-&amp;gt;make编译过程。因为之前的项目是使用qt工程建立的。我希望保留使用第二种方法。但期间困惑了几个小时才解决。&amp;emsp;&amp;emsp;故，记录一下过程：&amp;emsp;&amp;emsp;我的环">
+<meta name="twitter:title" content="从Z域看PID控制器">
+<meta name="twitter:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 
     
     <link rel="alternative" href="/atom.xml" title="Ttoto的后花园" type="application/atom+xml">
@@ -75,14 +92,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/03/qtpclv/" title="QT工程添加PCL库" itemprop="url">QT工程添加PCL库</a>
+      <a href="/2016/08/19/pid/" title="从Z域看PID控制器" itemprop="url">从Z域看PID控制器</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-03T10:04:39.000Z" itemprop="datePublished"> 發表於 2016-05-03</time>
+    <time datetime="2016-08-19T19:30:32.000Z" itemprop="datePublished"> 發表於 2016-08-19</time>
     
   </p>
 </header>
@@ -91,14 +108,31 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来龙去脉"><span class="toc-number">1.</span> <span class="toc-text">来龙去脉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#庖丁解牛"><span class="toc-number">2.</span> <span class="toc-text">庖丁解牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿来主义"><span class="toc-number">3.</span> <span class="toc-text">拿来主义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后面的话"><span class="toc-number">4.</span> <span class="toc-text">后面的话</span></a></li></ol>
 		
 		</div>
 		
-		<p>&emsp;&emsp;在最近的项目中，需要可视化点云。PCL自然是第一选择。在qt中使用PCL可以参照pcl tutorial建立CMake工程。还有另外一种选择是在qt工程中添加pcl库，依然保留qmake-&gt;make编译过程。因为之前的项目是使用qt工程建立的。我希望保留使用第二种方法。但期间困惑了几个小时才解决。<br>&emsp;&emsp;故，记录一下过程：<br>&emsp;&emsp;我的环境是 Ubuntu14.04 安装PCL：</p>
-<p><pre><code>sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl<br>sudo apt-get update<br>sudo apt-get install libpcl-all<br></code></pre>&emsp;&emsp;在Ubuntu下面安装的时候依赖库也都直接安装好了。在Windows下面开发的时候可以去下载all-in-one的安装包<br>&emsp;&emsp;但是因为pcl是依赖于boost eigen flann VTK QT QHull OpenNi 所以需要依次添加。下面给出*.pro的相关内容：</p>
-<p><pre><code>INCLUDEPATH +=  “/usr/include/pcl-1.7/“    \<br>                “/usr/include/pcl-1.7/pcl” \<br>                “/usr/include/flann/“      \<br>                “/usr/include/eigen3/“     \<br>                “/usr/include/vtk-5.8”     \<br>                “/usr/include/boost”       \<br></code></pre></p>
-<p><pre><code>LIBS += -lpcl_common            \<br>        -lpcl_features          \<br>        -lpcl_filters           \<br>        -lpcl_io                \<br>        -lpcl_io_ply            \<br>        -lpcl_kdtree            \<br>        -lpcl_keypoints         \<br>        -lpcl_octree            \<br>        -lpcl_outofcore         \<br>        -lpcl_features          \<br>        -lpcl_segmentation      \<br>        -lpcl_people            \<br>        -lpcl_recognition       \<br>        -lpcl_registration      \<br>        -lpcl_sample_consensus  \<br>        -lpcl_search            \<br>        -lpcl_surface           \<br>        -lpcl_tracking          \<br>        -lpcl_visualization     \<br>        -lflann                 \<br>        -lqhull                 \<br>        -lboost_system          \<br>        -lQVTK                  \<br>        -lvtkCommon             \<br>        -lvtkFiltering          \<br>        -lvtkRendering          \<br></code></pre>&emsp;&emsp;综上，主要有两点要注意。其一，*.pro文件需要添加所有的依赖库，否则链接的时候会报错。其二，PCL QVTK5.8只对QT4支持，所以需要用QT4的库(查看方法 qmake -v)。</p>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>&emsp;&emsp;</p>
+<h3 id="来龙去脉">来龙去脉</h3><p>最近在复习控制的一个考试，翻到了一个关于PID的案例，又有了新的发现。不敢独享。问题的提出是因为传感器的噪声会在微分项放大，在设计控制器的时候往往在微分环节加一个一阶系统来抑制噪声。设计这样一个系统在时域上理解比较晦涩，但是通过Z变换后形式变得异常简单。</p>
+<h3 id="庖丁解牛">庖丁解牛</h3><p>图片是是pid控制器的框图。<br><img src="http://i2.buimg.com/4851/ea0ec90f6b1a3465.jpg" alt=""></p>
+<p>我们在微分项加入一个用于抑制高频噪声的一阶系统<br><img src="http://i2.buimg.com/4851/b66c2d126b3d5b48.jpg" alt=""><br>新系统的传递函数<br>$$G_{PID}(s)=K_p(1+\frac{1}{T_Ns}+\frac{T_vs}{1+sT_{Tp}})$$<br>我们要把它用Z变换来表示，其实就是把传递函数用s来表示。我们引入一个积分的例子来找出替换的形式。积分在S域表现为1/s。时域上的表示为<br>$$x(t)=\int_{0}^{t}u(\tau )d\tau $$<br>在数字系统中也可以表示为<br>$$x(t)=x(t-T)+\frac{T}{2}(u(t-T)+u(t)) $$<br>进行拉氏变换<br>$$X(s)=X(s)e^{-sT}+\frac{T}{2}(U(s)e^{-sT}+U(s)) $$<br>我们得到<br>$$\frac{X(s)}{U(s)}=\frac{1}{s}=\frac{1+e^{-sT}}{1-e^{-sT}}\cdot \frac{T}{2} $$<br>$$s= \frac{2}{T} \cdot \frac{1+e^{-sT}}{1-e^{-sT}} $$<br>最带入到系统的传递函数中去</p>
+<h3 id="拿来主义">拿来主义</h3><p>最后我们重新写出Z变换后的传递函数<br>$$G_{c_{pid TP}}(z)=\frac{d_0+d_1\cdot z^{-1}+d_2\cdot z^{-2}}{1-c1\cdot z^{-1}-c2\cdot z^{-2}}$$<br>其中各个参数为：<br>$$\begin{align}<br>&amp; d_{0}=K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )+2T\left ( T_{n}+T_{TP} \right )+T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel1} \\<br>&amp; d_{1}=-2K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )-T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel2} \\<br>&amp; d_{2}=K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )-2T\left ( T_{n}+T_{TP} \right )+T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel3} \\<br>&amp; c_{1}=\frac{4T_{TP}}{2T_{TP}+T}  \label{eq:rel4} \\<br>&amp; c_{1}=-\frac{2T_{TP}-T}{2T_{TP}+T}  \label{eq:rel5} \\<br>\end{align}$$</p>
+<h3 id="后面的话">后面的话</h3><p>最近事情真的太多了。需要让自己平静下来，争取每个月都能分享一些东西。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -107,7 +141,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/PCL/">PCL</a><a href="/tags/QT/">QT</a>
+  <span></span> <a href="/tags/控制/">控制</a>
   </div>
 
 </div>
@@ -116,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/05/03/qtpclv/" data-title="QT工程添加PCL库 | Ttoto的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/08/19/pid/" data-title="从Z域看PID控制器 | Ttoto的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -129,19 +163,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/08/19/pid/" title="从Z域看PID控制器">
-  <strong>上一篇：</strong><br/>
-  <span>
-  从Z域看PID控制器</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/22/study/"  title="学习方向">
+<a href="/2016/05/03/qtpclv/"  title="QT工程添加PCL库">
  <strong>下一篇：</strong><br/> 
- <span>学习方向
+ <span>QT工程添加PCL库
 </span>
 </a>
 </div>
@@ -156,7 +182,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来龙去脉"><span class="toc-number">1.</span> <span class="toc-text">来龙去脉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#庖丁解牛"><span class="toc-number">2.</span> <span class="toc-text">庖丁解牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿来主义"><span class="toc-number">3.</span> <span class="toc-text">拿来主义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后面的话"><span class="toc-number">4.</span> <span class="toc-text">后面的话</span></a></li></ol>
  
   </div>
 
