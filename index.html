@@ -76,6 +76,176 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/09/28/reconstruction/" title="sfm项目杂谈" itemprop="url">sfm项目杂谈</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2016-09-28T11:31:32.000Z" itemprop="datePublished"> 發表於 2016-09-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h3 id="缘起">缘起</h3><p>读书的时候可以没有负担的尝试一下不同的研究方向，加上自己对cv比较感兴趣，选了一个sfm的题目作为studentenarbeit。拖拖沓沓做到现在，也算有了结果。<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/reconstruction_1.png?imageView2/2/w/1152/h/830" class="img-center"></p>
+<h3 id="sfm的流程">sfm的流程</h3><p>sfm的pipeline大概可以分为两个步骤。<br>1，最初的2张图像的重建。主要是<br>2，每添加一张新的图片，通过和之前的图片匹配，找到一系列已经重建出的三维点和对应新图片中的位置，最后算出新图片的P_matrix。使用的是OpenCV里面的方法 cv::solvePnPRansac</p>
+<h3 id="SfM-Toy-Library_中相机的位置">SfM-Toy-Library 中相机的位置</h3><p>在完成每一张图片的重建后我们得到了P-matrix</p>
+<pre><code>
+    Pmats[rec_index] = cv::Matx34d  (R(0,0),R(0,1),R(0,2),t(0),
+                                     R(1,0),R(1,1),R(1,2),t(1),
+                                     R(2,0),R(2,1),R(2,2),t(2));
+</code></pre>
+我们用以下代码从P-matrix中获取各个相机的位置
+<pre><code>
+    Eigen::Matrix<double, 4="" 3,=""> P_ = Eigen::Map<eigen::matrix<double, 3,="" 4,="" eigen::rowmajor=""> >(Pmats[rec_index].val);
+    Eigen::Matrix3d R_ = P_.block(0, 0, 3, 3);
+    Eigen::Vector3d t_ = P_.block(0, 3, 3, 1);
+    Eigen::Vector3d c = -R_.transpose() * t_;
+</eigen::matrix<double,></double,></code></pre>
+
+<p>这里的c就是相机的坐标，在SfM-Toy-Library这部分的代码是放在viewer里面做的，但是在实际评估中我们经常要使用到相机的位置。</p>
+<h3 id="显示部分的改进">显示部分的改进</h3><p>的SfM-Toy-Library 用了libQGLViewer来显示结果，最后用三个坐标轴来表示相机的方向。为了更好的展示结果我后面改为pyramid的表示方法，同时修正了Rotation相反的问题。效果如下图：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/reconstruction_2.png?imageView2/2/w/614/h/496/format/jpg" class="img-center"><br>修正Rotation反向问题: R.inverse()</p>
+<pre><code>
+    //compute transformation to place cameras in world
+    m_cameras_transforms.resize(m_cameras.size());
+    Eigen::Vector3d c_sum(0, 0, 0);
+    for (unsigned int i = 0; i < m_cameras.size(); ++i) {
+        Eigen::Matrix<double, 4="" 3,=""> P = Eigen::Map<eigen::matrix<double, 3,="" 4,="" eigen::rowmajor=""> >(m_cameras[i].val);
+        Eigen::Matrix3d R = P.block(0, 0, 3, 3);
+        Eigen::Vector3d t = P.block(0, 3, 3, 1);
+        Eigen::Vector3d c = -R.transpose() * t;
+        //cout << t << endl << endl;
+        //cout << R << endl << endl;
+        //cout << c << endl << endl;
+        c_sum += c;
+        m_cameras_transforms[i] = Eigen::Translation<double, 3="">(c)
+                                * Eigen::Quaterniond(R.inverse())
+                                * Eigen::UniformScaling<double>(m_scale_cameras_down);
+    }
+</double></double,></eigen::matrix<double,></double,></code></pre>
+使用pyramid的表示方法： 
+<pre><code>
+
+    #define CAM_SIZE (20)
+    #define CAM_W (CAM_SIZE)
+    #define CAM_H (CAM_SIZE*0.68)
+    #define CAM_DEPTH (CAM_SIZE)
+
+    glEnable(GL_RESCALE_NORMAL);
+    //glScaled(scale_cameras_down,scale_cameras_down,scale_cameras_down);
+    //glEnable(GL_LIGHTING);
+    for (unsigned int i = 0; i < m_cameras_transforms.size(); ++i) {
+
+        glPushMatrix();
+        glMultMatrixd(m_cameras_transforms[i].data());
+
+        glLineWidth(1.0);
+        glColor4f(0.8, 0.8, 0.8, 0.5);
+        glBegin(GL_LINES);
+        glVertex3f(-CAM_W, CAM_H, CAM_DEPTH);
+        glVertex3f(CAM_W, CAM_H, CAM_DEPTH);
+        glEnd();
+
+        glBegin(GL_LINES);
+        glVertex3f(CAM_W, CAM_H, CAM_DEPTH);
+        glVertex3f(CAM_W, -CAM_H, CAM_DEPTH);
+        glEnd();
+
+        glBegin(GL_LINES);
+        glVertex3f(CAM_W, -CAM_H, CAM_DEPTH);
+        glVertex3f(-CAM_W, -CAM_H, CAM_DEPTH);
+        glEnd();
+
+        glBegin(GL_LINES);
+        glVertex3f(-CAM_W, -CAM_H, CAM_DEPTH);
+        glVertex3f(-CAM_W, CAM_H, CAM_DEPTH);
+        glEnd();
+
+        glColor4f(0.6, 0.6, 0, 0.5);
+        glBegin(GL_LINES);
+        glVertex3f(0, 0, 0);
+        glVertex3f(-CAM_W, CAM_H, CAM_DEPTH);
+        glEnd();
+        glBegin(GL_LINES);
+        glVertex3f(0, 0, 0);
+        glVertex3f(-CAM_W, -CAM_H, CAM_DEPTH);
+        glEnd();
+        glBegin(GL_LINES);
+        glVertex3f(0, 0, 0);
+        glVertex3f(CAM_W, -CAM_H, CAM_DEPTH);
+        glEnd();
+        glBegin(GL_LINES);
+        glVertex3f(0, 0, 0);
+        glVertex3f(CAM_W, CAM_H, CAM_DEPTH);
+        glEnd();
+
+    //glColor4f(1, 1, 1, 1);
+    //QGLViewer::drawArrow(qglviewer::Vec(0, 0, 0), qglviewer::Vec(0, 0, CAM_DEPTH),1);
+    //glColor4f(0, 1, 0, 1);
+    //QGLViewer::drawArrow(qglviewer::Vec(0, 0, 0), qglviewer::Vec(0, 50, 0),5);
+    //glColor4f(0, 0, 1, 1);
+    //QGLViewer::drawArrow(qglviewer::Vec(0, 0, 0), qglviewer::Vec(0, 0, 50),5);
+
+        glPopMatrix();
+    }
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/CV/">CV</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/08/19/pid/" title="从Z域看PID控制器" itemprop="url">从Z域看PID控制器</a>
   </h1>
   <p class="article-author">By
@@ -748,6 +918,10 @@
 		
 			
 				<li><a href="/tags/基尔霍夫/" title="基尔霍夫">基尔霍夫<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CV/" title="CV">CV<sup>1</sup></a></li>
 			
 		
 		</ul>
