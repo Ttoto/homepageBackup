@@ -4,23 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>开篇的话 | 晟洋的后花园</title>
+    <title>四轴记录-PID参数调节 | 晟洋的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+    <meta name="description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开篇的话">
-<meta property="og:url" content="http://yoursite.com/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="四轴记录-PID参数调节">
+<meta property="og:url" content="http://yoursite.com/2017/05/28/drone1/index.html">
 <meta property="og:site_name" content="晟洋的后花园">
-<meta property="og:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
-<meta property="og:updated_time" content="2015-10-09T07:28:00.563Z">
+<meta property="og:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
+<meta property="og:updated_time" content="2017-06-03T16:19:02.562Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开篇的话">
-<meta name="twitter:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+<meta name="twitter:title" content="四轴记录-PID参数调节">
+<meta name="twitter:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 
     
     <link rel="alternative" href="/atom.xml" title="晟洋的后花园" type="application/atom+xml">
@@ -75,14 +90,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+      <a href="/2017/05/28/drone1/" title="四轴记录-PID参数调节" itemprop="url">四轴记录-PID参数调节</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2017-05-28T14:25:22.000Z" itemprop="datePublished"> 發表於 2017-05-28</time>
     
   </p>
 </header>
@@ -91,16 +106,54 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#困惑，缘由与解决方案"><span class="toc-number">1.</span> <span class="toc-text">困惑，缘由与解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#玄学与经验之谈"><span class="toc-number">2.</span> <span class="toc-text">玄学与经验之谈</span></a></li></ol>
 		
 		</div>
 		
-		<p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>时间如白驹过隙，转眼间硕士学习渐入尾声。硕士的毕业设计我选择做一个带光流定位的飞控。一方面对算是对之前工程积累的个整合，另一方面也是兴趣所在。<br>最近刚刚完成了姿态控制的PID tunning，说说自己的经验，仅供参考。<br><a href="http://ardupilot.org/copter/docs/tuning.html" target="_blank" rel="external">Tunning 教程</a></p>
+<h3 id="困惑，缘由与解决方案">困惑，缘由与解决方案</h3><p>在调试过程中，我参考了一些网络上的一些帖子，分别提供了一些参数组。风格迥异。一开始云里雾里，不知如何下手。<br>后面发现造成这些不同主要是两个方面因素。<br>1，单位不统一，输入和输出，有一些项目输入是欧拉角的角度，但是D过程中直接采用了陀螺仪的角速度单位是弧度。<br>2，需要把控制频率加上，这样才可以按照标准的PID公式来写。<br>我推荐大家按照完整公式来写PID控制回路。</p>
+<p>即在处理I过程和D过程中，考虑控制周期与时间。我的飞控姿态控制频率为200HZ。</p>
+<pre><code>
+#define FREQUENCY (200.0)
+float pid_process(float error)
+{
+    static float prev_error, i_error;
+    float out;
+    i_error += (error、FREQUENCY);
+    out = KP*error + KI*i_error + KD*(error-prev_error)*FREQUENCY;
+    prev_error = error;
+    return out;
+}
+</code></pre>
+
+
+<p>这样可以使用Ziegler–Nichols方法快速确定大致的参数范围。并且在同样数值的范围内，能明显感觉到P起主导左右，I消除积分误差，D代表了阻尼力。</p>
+<h3 id="玄学与经验之谈">玄学与经验之谈</h3><p>如果说PID tunning是一门玄学的话(大哭)，以下是个人调试的一些经验。<br>1在pid调试之前一定要确保姿态是对的。并且姿态没有目视延时。<br>2调试架不是必须的，用手来回感觉能够调出稳定起降的参数。<br>3无论’X’还是’十’结构，pitch和roll的参数先保持一致，稳定起降后再细调。<br>4把pitch轴和roll轴的输入限制在±5°内<br>5’X’结构pitch roll轴使用PD控制即可，’十’结构需用PID<br>6yaw轴使用PI控制器</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UAV/">UAV</a>
+  </div>
 
 </div>
 
@@ -108,7 +161,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/10/09/hello-world/" data-title="开篇的话 | 晟洋的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/05/28/drone1/" data-title="四轴记录-PID参数调节 | 晟洋的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -121,14 +174,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/29/fluidpower/" title="为什么飞机上大量使用液压系统">
-  <strong>上一篇：</strong><br/>
-  <span>
-  为什么飞机上大量使用液压系统</span>
+
+<div class="next">
+<a href="/2017/01/20/zzdyxzgdjdyxjy/"  title="转载-Openlab-电院学长给大家的一些建议">
+ <strong>下一篇：</strong><br/> 
+ <span>转载-Openlab-电院学长给大家的一些建议
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -140,7 +193,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#困惑，缘由与解决方案"><span class="toc-number">1.</span> <span class="toc-text">困惑，缘由与解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#玄学与经验之谈"><span class="toc-number">2.</span> <span class="toc-text">玄学与经验之谈</span></a></li></ol>
  
   </div>
 
