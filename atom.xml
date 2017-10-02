@@ -69,8 +69,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[转载-Openlab-电院学长给大家的一些建议]]></title>
-    <link href="http://yoursite.com/2017/01/20/zzdyxzgdjdyxjy/"/>
-    <id>http://yoursite.com/2017/01/20/zzdyxzgdjdyxjy/</id>
+    <link href="http://yoursite.com/2017/01/21/zzdyxzgdjdyxjy/"/>
+    <id>http://yoursite.com/2017/01/21/zzdyxzgdjdyxjy/</id>
     <published>2017-01-20T16:33:05.000Z</published>
     <updated>2017-02-12T17:41:53.199Z</updated>
     <content type="html"><![CDATA[<p>最近发生了很多事情，身边的同学开始讨论毕业后的去向，正好今天重新看到了3年前学长的一个帖子，感慨万千。帖子在内网，转载到博客，希望能有更多人看见。</p>
@@ -98,8 +98,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[sfm项目杂谈2-坐标变换]]></title>
-    <link href="http://yoursite.com/2016/10/20/reconstruction2/"/>
-    <id>http://yoursite.com/2016/10/20/reconstruction2/</id>
+    <link href="http://yoursite.com/2016/10/21/reconstruction2/"/>
+    <id>http://yoursite.com/2016/10/21/reconstruction2/</id>
     <published>2016-10-20T21:06:27.000Z</published>
     <updated>2016-10-20T21:38:25.312Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
@@ -274,8 +274,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[从Z域看PID控制器]]></title>
-    <link href="http://yoursite.com/2016/08/19/pid/"/>
-    <id>http://yoursite.com/2016/08/19/pid/</id>
+    <link href="http://yoursite.com/2016/08/20/pid/"/>
+    <id>http://yoursite.com/2016/08/20/pid/</id>
     <published>2016-08-19T19:30:32.000Z</published>
     <updated>2016-08-20T20:38:43.042Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
@@ -351,8 +351,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[格雷码]]></title>
-    <link href="http://yoursite.com/2015/12/04/greycode/"/>
-    <id>http://yoursite.com/2015/12/04/greycode/</id>
+    <link href="http://yoursite.com/2015/12/05/greycode/"/>
+    <id>http://yoursite.com/2015/12/05/greycode/</id>
     <published>2015-12-04T21:22:16.000Z</published>
     <updated>2015-12-22T16:33:54.744Z</updated>
     <content type="html"><![CDATA[<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。</p>
@@ -409,8 +409,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[怎样使用基尔霍夫定律解决问题]]></title>
-    <link href="http://yoursite.com/2015/11/07/Kirchhoff/"/>
-    <id>http://yoursite.com/2015/11/07/Kirchhoff/</id>
+    <link href="http://yoursite.com/2015/11/08/Kirchhoff/"/>
+    <id>http://yoursite.com/2015/11/08/Kirchhoff/</id>
     <published>2015-11-07T22:05:02.000Z</published>
     <updated>2015-12-22T16:42:12.437Z</updated>
     <content type="html"><![CDATA[<script type="text/x-mathjax-config">
@@ -491,8 +491,8 @@ float pid_process(float error)
   
   <entry>
     <title><![CDATA[为什么飞机上大量使用液压系统]]></title>
-    <link href="http://yoursite.com/2015/10/29/fluidpower/"/>
-    <id>http://yoursite.com/2015/10/29/fluidpower/</id>
+    <link href="http://yoursite.com/2015/10/30/fluidpower/"/>
+    <id>http://yoursite.com/2015/10/30/fluidpower/</id>
     <published>2015-10-29T21:41:51.000Z</published>
     <updated>2015-10-30T11:29:50.637Z</updated>
     <content type="html"><![CDATA[<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>LZ在国内上学的时候学的是航空工程，其中一个课程是介绍航空液压系统的。教授说液压系统在飞机中是非常重要的。但是学的是囫囵吞枣，并没有留下很深的映像。毕业后，身边从事机务工作的同学和我交谈中提到飞机的液压系统很复杂。但是在浮躁的lz看来液压系统是六七十年代的技术迟早要被电机所替代。后来LZ到了欧洲上学，又上了液压的课程。醍醐灌顶。明白了为什么飞机上大量使用液压系统。</p>

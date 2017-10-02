@@ -4,23 +4,40 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>开篇的话 | 晟洋的后花园</title>
+    <title>从Z域看PID控制器 | 晟洋的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+    <meta name="description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开篇的话">
-<meta property="og:url" content="http://yoursite.com/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="从Z域看PID控制器">
+<meta property="og:url" content="http://yoursite.com/2016/08/20/pid/index.html">
 <meta property="og:site_name" content="晟洋的后花园">
-<meta property="og:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
-<meta property="og:updated_time" content="2015-10-09T07:28:00.563Z">
+<meta property="og:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
+<meta property="og:image" content="http://i2.buimg.com/4851/ea0ec90f6b1a3465.jpg">
+<meta property="og:image" content="http://i2.buimg.com/4851/b66c2d126b3d5b48.jpg">
+<meta property="og:updated_time" content="2016-08-20T20:38:43.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开篇的话">
-<meta name="twitter:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+<meta name="twitter:title" content="从Z域看PID控制器">
+<meta name="twitter:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 
     
     <link rel="alternative" href="/atom.xml" title="晟洋的后花园" type="application/atom+xml">
@@ -75,14 +92,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+      <a href="/2016/08/20/pid/" title="从Z域看PID控制器" itemprop="url">从Z域看PID控制器</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2016-08-19T19:30:32.000Z" itemprop="datePublished"> 發表於 2016-08-20</time>
     
   </p>
 </header>
@@ -91,16 +108,41 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来龙去脉"><span class="toc-number">1.</span> <span class="toc-text">来龙去脉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#庖丁解牛"><span class="toc-number">2.</span> <span class="toc-text">庖丁解牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿来主义"><span class="toc-number">3.</span> <span class="toc-text">拿来主义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后面的话"><span class="toc-number">4.</span> <span class="toc-text">后面的话</span></a></li></ol>
 		
 		</div>
 		
-		<p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>&emsp;&emsp;</p>
+<h3 id="来龙去脉">来龙去脉</h3><p>最近在复习控制的一个考试，翻到了一个关于PID的案例，又有了新的发现。不敢独享。问题的提出是因为传感器的噪声会在微分项放大，在设计控制器的时候往往在微分环节加一个一阶系统来抑制噪声。设计这样一个系统在时域上理解比较晦涩，但是通过Z变换后形式变得异常简单。</p>
+<h3 id="庖丁解牛">庖丁解牛</h3><p>图片是是pid控制器的框图。<br><img src="http://i2.buimg.com/4851/ea0ec90f6b1a3465.jpg" alt=""></p>
+<p>我们在微分项加入一个用于抑制高频噪声的一阶系统<br><img src="http://i2.buimg.com/4851/b66c2d126b3d5b48.jpg" alt=""><br>新系统的传递函数<br>$$G_{PID}(s)=K_p(1+\frac{1}{T_Ns}+\frac{T_vs}{1+sT_{Tp}})$$<br>我们要把它用Z变换来表示，其实就是把传递函数用s来表示。我们引入一个积分的例子来找出替换的形式。积分在S域表现为1/s。时域上的表示为<br>$$x(t)=\int_{0}^{t}u(\tau )d\tau $$<br>在数字系统中也可以表示为<br>$$x(t)=x(t-T)+\frac{T}{2}(u(t-T)+u(t)) $$<br>进行拉氏变换<br>$$X(s)=X(s)e^{-sT}+\frac{T}{2}(U(s)e^{-sT}+U(s)) $$<br>我们得到<br>$$\frac{X(s)}{U(s)}=\frac{1}{s}=\frac{1+e^{-sT}}{1-e^{-sT}}\cdot \frac{T}{2} $$<br>$$s= \frac{2}{T} \cdot \frac{1+e^{-sT}}{1-e^{-sT}} $$<br>最带入到系统的传递函数中去</p>
+<h3 id="拿来主义">拿来主义</h3><p>最后我们重新写出Z变换后的传递函数<br>$$G_{c_{pid TP}}(z)=\frac{d_0+d_1\cdot z^{-1}+d_2\cdot z^{-2}}{1-c1\cdot z^{-1}-c2\cdot z^{-2}}$$<br>其中各个参数为：<br>$$\begin{align}<br>&amp; d_{0}=K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )+2T\left ( T_{n}+T_{TP} \right )+T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel1} \\<br>&amp; d_{1}=-2K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )-T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel2} \\<br>&amp; d_{2}=K_{p}\frac{4T_{n}\left ( T_{v} + T_{TP} \right )-2T\left ( T_{n}+T_{TP} \right )+T^{2}}{2T_{n}\left ( 2T_{TP}+T \right )}  \label{eq:rel3} \\<br>&amp; c_{1}=\frac{4T_{TP}}{2T_{TP}+T}  \label{eq:rel4} \\<br>&amp; c_{1}=-\frac{2T_{TP}-T}{2T_{TP}+T}  \label{eq:rel5} \\<br>\end{align}$$</p>
+<h3 id="后面的话">后面的话</h3><p>最近事情真的太多了。需要让自己平静下来，争取每个月都能分享一些东西。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/控制/">控制</a>
+  </div>
 
 </div>
 
@@ -108,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/10/09/hello-world/" data-title="开篇的话 | 晟洋的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/08/20/pid/" data-title="从Z域看PID控制器 | 晟洋的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -122,13 +164,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/30/fluidpower/" title="为什么飞机上大量使用液压系统">
+ <a href="/2016/09/28/reconstruction/" title="sfm项目杂谈">
   <strong>上一篇：</strong><br/>
   <span>
-  为什么飞机上大量使用液压系统</span>
+  sfm项目杂谈</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2016/05/03/qtpclv/"  title="QT工程添加PCL库">
+ <strong>下一篇：</strong><br/> 
+ <span>QT工程添加PCL库
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -140,7 +190,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来龙去脉"><span class="toc-number">1.</span> <span class="toc-text">来龙去脉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#庖丁解牛"><span class="toc-number">2.</span> <span class="toc-text">庖丁解牛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿来主义"><span class="toc-number">3.</span> <span class="toc-text">拿来主义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后面的话"><span class="toc-number">4.</span> <span class="toc-text">后面的话</span></a></li></ol>
  
   </div>
 

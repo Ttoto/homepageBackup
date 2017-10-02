@@ -4,23 +4,30 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>开篇的话 | 晟洋的后花园</title>
+    <title>格雷码 | 晟洋的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+    <meta name="description" content="数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。
+感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。这里要复习一下数电中的异或(XOR)运算,其真值表如下：接着我们来说把任意一个数转换为格雷码。第一步 写成二进制形式。 譬如十进制的12其二进制为1100第二部 最高位">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开篇的话">
-<meta property="og:url" content="http://yoursite.com/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="格雷码">
+<meta property="og:url" content="http://yoursite.com/2015/12/05/greycode/index.html">
 <meta property="og:site_name" content="晟洋的后花园">
-<meta property="og:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
-<meta property="og:updated_time" content="2015-10-09T07:28:00.563Z">
+<meta property="og:description" content="数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。
+感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。这里要复习一下数电中的异或(XOR)运算,其真值表如下：接着我们来说把任意一个数转换为格雷码。第一步 写成二进制形式。 譬如十进制的12其二进制为1100第二部 最高位">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/greyXOR_TABLE.jpg?imageView2/2/w/640/h/480">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/greybin2gery.jpg?imageView2/2/w/640/h/480">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/480/h/360/format/jpg">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/480/h/360/format/jpg">
+<meta property="og:updated_time" content="2015-12-22T16:33:54.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开篇的话">
-<meta name="twitter:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+<meta name="twitter:title" content="格雷码">
+<meta name="twitter:description" content="数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。
+感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。这里要复习一下数电中的异或(XOR)运算,其真值表如下：接着我们来说把任意一个数转换为格雷码。第一步 写成二进制形式。 譬如十进制的12其二进制为1100第二部 最高位">
 
     
     <link rel="alternative" href="/atom.xml" title="晟洋的后花园" type="application/atom+xml">
@@ -75,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+      <a href="/2015/12/05/greycode/" title="格雷码" itemprop="url">格雷码</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2015-12-04T21:22:16.000Z" itemprop="datePublished"> 發表於 2015-12-05</time>
     
   </p>
 </header>
@@ -95,12 +102,35 @@
 		
 		</div>
 		
-		<p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
+		<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script><br>数电中一笔带过的格雷码，在控制课程中又被提及。我们首先介绍一下格雷码的生成过程之后再来谈谈作为编码器的应用。</p>
+<p>感谢互联网，大家能方便找到很多生成和反解格雷码的方法。这里介绍的只是其中一种。这也是最终可以直接由硬件层面直接转换的方法。<br>这里要复习一下数电中的异或(XOR)运算,其真值表如下：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greyXOR_TABLE.jpg?imageView2/2/w/640/h/480" alt=""><br>接着我们来说把任意一个数转换为格雷码。<br>第一步 写成二进制形式。 譬如十进制的12其二进制为1100<br>第二部 最高位保留，保留格雷码最高位为1<br>第三部 把每一位和更高位进行异或运算12的运算结果为010<br>第四部 写出格雷码十进制12的格雷码为1010<br>附上手稿：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin2gery.jpg?imageView2/2/w/640/h/480" alt=""><br>为了更方便大家理解，有一个<a href="https://github.com/ttoto/grey-code-generator" target="_blank" rel="external">小程序</a>来生成格雷码的码盘。<br>下面滔说说格雷码在绝对编码器里面的应用。在电机控制系统中。编码器可以观测电机的当前位置。单圈绝对编码器能给出但圈内电机的唯一位置。而而格雷码码盘相比于二进制码盘能消除两位间隙中的误差。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&emsp;</th>
+<th style="text-align:center">&emsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greybin5.jpg?imageView2/2/w/480/h/360/format/jpg" alt=""></td>
+<td style="text-align:center"><img src="http://7xnxd9.com1.z0.glb.clouddn.com/greygrey5.jpg?imageView2/2/w/480/h/360/format/jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+<p>上图左边是二进制码的码盘，右边是格雷码的码盘。我们可以发现格雷码确实做到了相邻两个位置。有且只有一位有变化，能确保在中间过程中不会有超过最小位的误差。</p>
+<p>关于格雷码更加详细的介绍可以参见<a href="https://en.wikipedia.org/wiki/Gray_code" target="_blank" rel="external">Wiki</a></p>
+<p>岁月如梭，光阴似箭。据我所知或者以我所见，现在有了电磁式的绝对编码器。有格雷码码盘做的光电编码器已经算是大块头的老家伙了。<br>不过。。。格雷码依旧是个很好玩的东西。<br>不是吗？</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/控制/">控制</a>
+  </div>
 
 </div>
 
@@ -108,7 +138,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/10/09/hello-world/" data-title="开篇的话 | 晟洋的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/12/05/greycode/" data-title="格雷码 | 晟洋的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -122,13 +152,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/30/fluidpower/" title="为什么飞机上大量使用液压系统">
+ <a href="/2016/03/22/study/" title="学习方向">
   <strong>上一篇：</strong><br/>
   <span>
-  为什么飞机上大量使用液压系统</span>
+  学习方向</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/11/15/recommand-software/"  title="软件推荐">
+ <strong>下一篇：</strong><br/> 
+ <span>软件推荐
+</span>
+</a>
+</div>
 
 </nav>
 

@@ -4,23 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>开篇的话 | 晟洋的后花园</title>
+    <title>sfm项目杂谈2-坐标变换 | 晟洋的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+    <meta name="description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开篇的话">
-<meta property="og:url" content="http://yoursite.com/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="sfm项目杂谈2-坐标变换">
+<meta property="og:url" content="http://yoursite.com/2016/10/21/reconstruction2/index.html">
 <meta property="og:site_name" content="晟洋的后花园">
-<meta property="og:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
-<meta property="og:updated_time" content="2015-10-09T07:28:00.563Z">
+<meta property="og:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
+<meta property="og:updated_time" content="2016-10-20T21:38:25.312Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开篇的话">
-<meta name="twitter:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+<meta name="twitter:title" content="sfm项目杂谈2-坐标变换">
+<meta name="twitter:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 
     
     <link rel="alternative" href="/atom.xml" title="晟洋的后花园" type="application/atom+xml">
@@ -75,14 +90,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+      <a href="/2016/10/21/reconstruction2/" title="sfm项目杂谈2-坐标变换" itemprop="url">sfm项目杂谈2-坐标变换</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2016-10-20T21:06:27.000Z" itemprop="datePublished"> 發表於 2016-10-21</time>
     
   </p>
 </header>
@@ -91,16 +106,42 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-number">2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码与解释"><span class="toc-number">3.</span> <span class="toc-text">代码与解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后的话"><span class="toc-number">4.</span> <span class="toc-text">最后的话</span></a></li></ol>
 		
 		</div>
 		
-		<p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<h3 id="问题描述">问题描述</h3><p>之前做的学生项目到了evaluation的阶段。需要把sfm的结果和真实数据进行比较。需要用数据集里面的相机准确pose来进行一次重建。<br>数据集中的坐标系基于World-Coordinate。在sfm的方法中我们的Initial-Coordinate是按照第一张图片来建立的。第一张图片是在w系原点拍摄的所以两个坐标系不存在Transmission，只有Rotation。<br>两个坐标系的对应关系是： W_x 对应 I_z; W_y 对应 -I_x; W_z 对应 -I_y。<br>具体的问题：通过W系下面的Quaternion形式的Pose，写出基于I坐标系下的相机Position Matrix。</p>
+<h3 id="方法">方法</h3><p>进行旋转变换大概可以用以下三种形式做。<br>1四元数下进行旋转<br>2旋转矩阵进行旋转<br>3欧拉角旋转<br>我们的情况比较特殊三个坐标轴只是方向不同，我选择用欧拉角进行坐标变换，之后再拼凑数Position Matrix.</p>
+<h3 id="代码与解释">代码与解释</h3><p><pre><code><br>    cv::Matx44d Q_1,Q_2,R_tmp;<br>    double px,py,pz,qx,qy,qz,qw;<br>    px=msg-&gt;pose.position.x;<br>    py=msg-&gt;pose.position.y;<br>    pz=msg-&gt;pose.position.z;<br>    qx=msg-&gt;pose.orientation.x;<br>    qy=msg-&gt;pose.orientation.y;<br>    qz=msg-&gt;pose.orientation.z;<br>    qw=msg-&gt;pose.orientation.w;<br>    Q_1 = cv::Matx44d( qw,   qz,  -qy,   qx,<br>                       -qz,   qw,   qx,   qy,<br>                       qy,  -qx,   qw,   qz,<br>                       -qx,  -qy,  -qz,   qw);<br>    Q_2 = cv::Matx44d( qw,   qz,  -qy,  -qx,<br>                       -qz,   qw,   qx,  -qy,<br>                       qy,  -qx,   qw,  -qz,<br>                       qx,   qy,   qz,   qw);<br>    R_tmp = Q_1_Q_2;<br>    double ysqr = qy _ qy;<br>    double t0 = -2.0f _ (ysqr + qz _ qz) + 1.0f;<br>    double t1 = +2.0f _ (qx _ qy + qw _ qz);<br>    double t2 = -2.0f _ (qx _ qz - qw _ qy);<br>    double t3 = +2.0f _ (qy _ qz + qw _ qx);<br>    double t4 = -2.0f _ (qx * qx + ysqr) + 1.0f;<br>    t2 = t2 &gt; 1.0f ? 1.0f : t2;<br>    t2 = t2 &lt; -1.0f ? -1.0f : t2;<br>    double world_p = std::asin(t2);<br>    double world_r = std::atan2(t3, t4);<br>    double world_y = std::atan2(t1, t0);<br></code></pre><br>    从Quaternion形式获取W系下的欧拉角。</p>
+<p><pre><code><br>    double cam_p = -world_y-(3.14159/2);<br>    double cam_r = -world_p;<br>    double cam_y = world_r;<br></code></pre><br>    欧拉角进行坐标系的变换。</p>
+<p><pre><code><br>    cv::Matx33d R_x,R_y,R_z,R_t;<br>    R_x &lt;&lt; 1,0,0,<br>        0,cos(cam_r),-sin(cam_r),<br>        0,sin(cam_r),cos(cam_r);<br>    R_y &lt;&lt; cos(cam_p),0,sin(cam_p),<br>        0,1,0,<br>        -sin(cam_p),0,cos(cam_p);<br>    R_z &lt;&lt; cos(cam_y),-sin(cam_y),0,<br>        sin(cam_y),cos(cam_y),0,<br>        0,0,1;<br>    R_t = R_z_R_y_R_x;<br>    R_t = R_t.inv();<br>    cv::Matx34d Pmat;<br>    cv::Matx31d c,t;<br>    c &lt;&lt; -1.0_py,-1.0_pz,px;<br>    t = -R_t*c;<br>    Pmat &lt;&lt; R_t(0,0),R_t(0,1),R_t(0,2),t(0),<br>        R_t(1,0),R_t(1,1),R_t(1,2),t(1),<br>        R_t(2,0),R_t(2,1),R_t(2,2),t(2);<br>    string pmatfilename = PMAT_PATH + int2filename(count/5) + “.png.pmat”;<br>    cout &lt;&lt; pmatfilename &lt;&lt; endl;<br>    stort_pmat(pmatfilename,Pmat);</code></pre></p>
+<p><br>    用欧拉角和位移写出Positon Matrix。</p>
+<h3 id="最后的话">最后的话</h3><p>最近开始真正调整自己的状态，希望之后的更新能够更加及时。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/CV/">CV</a>
+  </div>
 
 </div>
 
@@ -108,7 +149,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/10/09/hello-world/" data-title="开篇的话 | 晟洋的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/10/21/reconstruction2/" data-title="sfm项目杂谈2-坐标变换 | 晟洋的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -122,13 +163,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/30/fluidpower/" title="为什么飞机上大量使用液压系统">
+ <a href="/2017/01/21/zzdyxzgdjdyxjy/" title="转载-Openlab-电院学长给大家的一些建议">
   <strong>上一篇：</strong><br/>
   <span>
-  为什么飞机上大量使用液压系统</span>
+  转载-Openlab-电院学长给大家的一些建议</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2016/09/28/reconstruction/"  title="sfm项目杂谈">
+ <strong>下一篇：</strong><br/> 
+ <span>sfm项目杂谈
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -140,7 +189,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-number">2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码与解释"><span class="toc-number">3.</span> <span class="toc-text">代码与解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后的话"><span class="toc-number">4.</span> <span class="toc-text">最后的话</span></a></li></ol>
  
   </div>
 

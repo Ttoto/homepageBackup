@@ -4,23 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>开篇的话 | 晟洋的后花园</title>
+    <title>怎样使用基尔霍夫定律解决问题 | 晟洋的后花园</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SY.Chen">
     
 
     
-    <meta name="description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+    <meta name="description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开篇的话">
-<meta property="og:url" content="http://yoursite.com/2015/10/09/hello-world/index.html">
+<meta property="og:title" content="怎样使用基尔霍夫定律解决问题">
+<meta property="og:url" content="http://yoursite.com/2015/11/08/Kirchhoff/index.html">
 <meta property="og:site_name" content="晟洋的后花园">
-<meta property="og:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
-<meta property="og:updated_time" content="2015-10-09T07:28:00.563Z">
+<meta property="og:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp1.png?imageView2/2/w/320/h/240">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp2.png?imageView2/2/w/320/h/240">
+<meta property="og:image" content="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp4.png?imageView2/2/w/640/h/480">
+<meta property="og:updated_time" content="2015-12-22T16:42:12.437Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开篇的话">
-<meta name="twitter:description" content="欢迎来到Ttoto的后花园，探索更多的秘密。">
+<meta name="twitter:title" content="怎样使用基尔霍夫定律解决问题">
+<meta name="twitter:description" content="MathJax.Hub.Config({
+    extensions: [&quot;tex2jax.js&quot;],
+    jax: [&quot;input/TeX&quot;, &quot;output/HTML-CSS&quot;],
+    tex2jax: {
+      inlineMath: [ [&apos;$&apos;,&apos;$&apos;], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      displayMath: [ [&apos;$$&apos;,&apos;$$&apos;], [&quot;\\[&quot;,">
 
     
     <link rel="alternative" href="/atom.xml" title="晟洋的后花园" type="application/atom+xml">
@@ -75,14 +93,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/09/hello-world/" title="开篇的话" itemprop="url">开篇的话</a>
+      <a href="/2015/11/08/Kirchhoff/" title="怎样使用基尔霍夫定律解决问题" itemprop="url">怎样使用基尔霍夫定律解决问题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SY.Chen" target="_blank" itemprop="author">SY.Chen</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-09T07:28:00.563Z" itemprop="datePublished"> 發表於 2015-10-09</time>
+    <time datetime="2015-11-07T22:05:02.000Z" itemprop="datePublished"> 發表於 2015-11-08</time>
     
   </p>
 </header>
@@ -91,16 +109,41 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工欲善其事，必先利其器"><span class="toc-number">1.</span> <span class="toc-text">工欲善其事，必先利其器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何准确找出所需的线性无关的方程组"><span class="toc-number">2.</span> <span class="toc-text">如何准确找出所需的线性无关的方程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建矩阵并求解"><span class="toc-number">3.</span> <span class="toc-text">构建矩阵并求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说在后面的话"><span class="toc-number">4.</span> <span class="toc-text">说在后面的话</span></a></li></ol>
 		
 		</div>
 		
-		<p>欢迎来到Ttoto的后花园，探索更多的秘密。</p>
+		<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<p>&emsp;&emsp;</p>
+<h3 id="工欲善其事，必先利其器">工欲善其事，必先利其器</h3><p>&emsp;&emsp;从基尔霍夫定理开始说起。上过电路基础课程的同学肯定对<a href="https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws" target="_blank" rel="external">基尔霍夫电流电压定律</a>很了解，我们亦可以可用文字描述成：<br>对于任意节点流入流出电流和为0,<br>$$\sum_{k=0}^{n}I_{k}=0$$<br>对于任意闭合回路电压代数和为0。<br>$$\sum_{k=0}^{n}U_{k}=0$$<br>我们常用下列的题目来考察自己是否能学以致用：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp1.png?imageView2/2/w/320/h/240" class="img-center"><br>能很快解出上面的题目的同学不一定对下面的题目很有信心：<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp2.png?imageView2/2/w/320/h/240" class="img-center"><br>这是因为实际在比较复杂的情况下。要解出上面的</p>
+<h3 id="如何准确找出所需的线性无关的方程组">如何准确找出所需的线性无关的方程组</h3><p>&emsp;&emsp;为了更好的说明题目，我们明确两个细节<br>&emsp;&emsp;&emsp;&emsp;1,n=节点个数；<br>&emsp;&emsp;&emsp;&emsp;2,b=电流个数。<br>&emsp;&emsp;在上例中我们可以看出有A~E五个节点,n=5;同时有8个未知电流,b=8。<br>&emsp;&emsp;此外我们引出两个概念”Tree Branch”和”Non-Tree Branch”(主分支与从分支)。其中”Tree Branch”是指连接所有不同节点最少支流。此外的电流算是”Non-Tree Branch”在下图中蓝色标出的是主分支。<br><img src="http://7xnxd9.com1.z0.glb.clouddn.com/Kirchhofftmp4.png?imageView2/2/w/640/h/480" class="img-center"><br>&emsp;&emsp;在选择线性无关的方程组时我们选取(n-1)个节点利用基尔霍夫电流定律建立方程。在选择建立电压定律的方程时我们遵循”Non-Tree Branch”+”Tree Branch”的原则来建立。如上图中的四个闭合回路都包含了Tree。这样我们就能够构建b个线性无关的方程组：<br>$$<br> \begin{equation}<br>\left\{<br>\begin{aligned}<br>I_{1} - I_{2} -I_{4}                                                       &amp;=0\\<br>I_{2} - I_{3} -I_{5}                                                       &amp;=0\\<br>I_{1} - I_{4} -I_{6} -I_{8}                                                &amp;=0\\<br>I_{5} + I_{6} -I_{7}                                                       &amp;=0\\<br>R_1 \cdot I_1 + R_4 \cdot I_4                                              &amp;=U_{1}\\<br>R_2 \cdot I_2 - R_4 \cdot I_4 + R_5 \cdot I_5 - R_6\cdot I_6               &amp;= U_2\\<br>R_2 \cdot I_2 + R_3 \cdot I_3 - R_4 \cdot I_4 - R_6\cdot I_6 - R_7\cdot I_7&amp;=-U_3\\<br>R_6 \cdot I_6 - R_7 \cdot I_7 - R_8 \cdot I_8                              &amp;=0\\<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>&emsp;&emsp;在上面的方程组中 1~4 是利用A\B\C\D四个节点建立的基尔霍夫电流方程， 5~8是按照上述规则建立的基尔霍夫电压方程。通过这样子的建立方式我们能够保证这8个方程是线性无关的。</p>
+<h3 id="构建矩阵并求解">构建矩阵并求解</h3><p>$$<br>\begin{pmatrix}<br>1&amp;-1&amp;0&amp;-1&amp;0&amp;0&amp;0&amp;0\\0&amp;1&amp;-1&amp;0&amp;1&amp;0&amp;0&amp;0\\1&amp;0&amp;0&amp;-1&amp;0&amp;-1&amp;0&amp;-1\\0&amp;0&amp;0&amp;0&amp;1&amp;1&amp;-1&amp;0\\R_1&amp;0&amp;0&amp;R_4&amp;0&amp;0&amp;0&amp;0\\0&amp;R_2&amp;R_3&amp;-R_4&amp;R5&amp;-R_6&amp;0&amp;0\\0&amp;R_2&amp;R_3&amp;-R_4&amp;0&amp;-R_6&amp;-R_7&amp;0\\0&amp;0&amp;0&amp;0&amp;0&amp;R_6&amp;R_7&amp;-R_8\end{pmatrix} \cdot \begin{pmatrix}I_1\\I_2\\I_3\\I_4\\I_5\\I_6\\I_7\\I_8\end{pmatrix}=\begin{pmatrix}0\\0\\0\\0\\U_1\\U_{2}\\{-U_3}\\0\end{pmatrix}$$<br>这样在仿真过程中通过对矩阵求逆，就很容易得到各个branch上的电流大小。进而得出结果</p>
+<h3 id="说在后面的话">说在后面的话</h3><p>&emsp;&emsp;纸上得来终觉浅，绝知此事要躬行。重新学习了一遍基尔霍夫定律，又有了新的发现。难道这就是螺旋往复的过程？不管你信不信，我是信了。</p>
+<p>END</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/基尔霍夫/">基尔霍夫</a><a href="/tags/电子/">电子</a>
+  </div>
 
 </div>
 
@@ -108,7 +151,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/10/09/hello-world/" data-title="开篇的话 | 晟洋的后花园" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/11/08/Kirchhoff/" data-title="怎样使用基尔霍夫定律解决问题 | 晟洋的后花园" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -122,13 +165,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/30/fluidpower/" title="为什么飞机上大量使用液压系统">
+ <a href="/2015/11/15/recommand-software/" title="软件推荐">
   <strong>上一篇：</strong><br/>
   <span>
-  为什么飞机上大量使用液压系统</span>
+  软件推荐</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/11/02/02olpelake/"  title="Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。">
+ <strong>下一篇：</strong><br/> 
+ <span>Biggesee——鸢飞戾天者，望峰息心；经纶世务者，窥谷忘反。
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -140,7 +191,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#工欲善其事，必先利其器"><span class="toc-number">1.</span> <span class="toc-text">工欲善其事，必先利其器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何准确找出所需的线性无关的方程组"><span class="toc-number">2.</span> <span class="toc-text">如何准确找出所需的线性无关的方程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建矩阵并求解"><span class="toc-number">3.</span> <span class="toc-text">构建矩阵并求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#说在后面的话"><span class="toc-number">4.</span> <span class="toc-text">说在后面的话</span></a></li></ol>
  
   </div>
 

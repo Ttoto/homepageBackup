@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    <lastmod>2017-10-02T06:22:11.700Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2017/05/28/drone1/</loc>
     <lastmod>2017-06-03T16:19:02.562Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/01/20/zzdyxzgdjdyxjy/</loc>
+    <loc>http://yoursite.com/2017/01/21/zzdyxzgdjdyxjy/</loc>
     <lastmod>2017-02-12T17:41:53.199Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/10/20/reconstruction2/</loc>
+    <loc>http://yoursite.com/2016/10/21/reconstruction2/</loc>
     <lastmod>2016-10-20T21:38:25.312Z</lastmod>
   </url>
   
@@ -22,7 +27,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/08/19/pid/</loc>
+    <loc>http://yoursite.com/2016/08/20/pid/</loc>
     <lastmod>2016-08-20T20:38:43.042Z</lastmod>
   </url>
   
@@ -37,22 +42,17 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    <lastmod>2015-12-22T18:17:34.894Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2015/11/15/recommand-software/</loc>
     <lastmod>2015-12-22T16:44:39.536Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/11/07/Kirchhoff/</loc>
+    <loc>http://yoursite.com/2015/11/08/Kirchhoff/</loc>
     <lastmod>2015-12-22T16:42:12.437Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/12/04/greycode/</loc>
+    <loc>http://yoursite.com/2015/12/05/greycode/</loc>
     <lastmod>2015-12-22T16:33:54.744Z</lastmod>
   </url>
   
@@ -62,7 +62,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/10/29/fluidpower/</loc>
+    <loc>http://yoursite.com/2015/10/30/fluidpower/</loc>
     <lastmod>2015-10-30T11:29:50.637Z</lastmod>
   </url>
   
